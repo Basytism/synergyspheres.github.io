@@ -1,89 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Upload & Claim Synergy Coins</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Tools – Synergy Spheres 3.0</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    body { font-family: 'Space Grotesk', sans-serif; }
     .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
-
-  <div class="max-w-3xl mx-auto py-16 px-6 text-center">
-    <h1 class="text-4xl font-bold font-orbitron mb-4">🚀 Upload Your Review</h1>
-    <p class="text-gray-400 mb-6">Upload an image or video review and claim your <strong class="text-indigo-400">Synergy Coins</strong>.</p>
-
-    <!-- Upload Form -->
-    <form id="uploadForm" class="bg-gray-800 rounded-lg p-6 shadow-lg">
-      <div class="mb-4 text-left">
-        <label class="block text-sm mb-1">Your Name</label>
-        <input type="text" class="w-full bg-gray-700 p-2 rounded text-white" placeholder="e.g., Satoshi Nakamoto" required>
+<body class="bg-gray-900 text-white font-space">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-900 to-blue-900 shadow-md py-4">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="/logo-full.png" alt="Synergy Spheres Logo" class="h-10 w-10 animate-spin-slow">
+        <h1 class="text-xl font-bold font-orbitron uppercase tracking-wide">Code Counsel Tools</h1>
       </div>
-      <div class="mb-4 text-left">
-        <label class="block text-sm mb-1">Your Email</label>
-        <input type="email" class="w-full bg-gray-700 p-2 rounded text-white" placeholder="e.g., email@example.com" required>
+      <div class="flex items-center space-x-4">
+        <a href="/index.html" class="text-white hover:text-yellow-300 font-medium">← Back to Main Site</a>
+        <div class="relative group">
+          <button class="text-white hover:text-yellow-300 font-medium focus:outline-none">Tools ▾</button>
+          <div class="absolute right-0 mt-2 w-48 bg-gray-800 rounded shadow-xl z-50 hidden group-hover:block">
+            <a href="/reading-speed.html" class="block px-4 py-2 text-sm text-white hover:bg-indigo-600">📖 Reading Speed</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-indigo-600">📄 Legal Draft Assistant</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-indigo-600">🔍 Case Search AI</a>
+          </div>
+        </div>
       </div>
-
-      <div class="mb-4 text-left">
-        <label class="block text-sm mb-2">Upload Image or Video</label>
-        <input type="file" id="mediaUpload" accept="image/*,video/*" class="w-full text-gray-200 bg-gray-700 p-2 rounded" required>
-      </div>
-
-      <!-- Preview -->
-      <div id="preview" class="mb-4"></div>
-
-      <!-- Submit -->
-      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-white font-semibold transition">
-        🎉 Submit & Claim Coins
-      </button>
-    </form>
-
-    <!-- Confirmation -->
-    <div id="confirmationMsg" class="hidden mt-6 text-green-400 font-semibold">
-      ✅ Thank you! Your media is uploaded. Synergy Coins on the way!
     </div>
-  </div>
+  </header>
 
-  <!-- Script -->
-  <script>
-    const mediaUpload = document.getElementById('mediaUpload');
-    const preview = document.getElementById('preview');
-    const form = document.getElementById('uploadForm');
-    const confirmation = document.getElementById('confirmationMsg');
+  <!-- Hero -->
+  <section class="text-center py-16 bg-gradient-to-br from-indigo-800 to-purple-800">
+    <div class="flex justify-center mb-6">
+      <img src="/logo-full.png" alt="Synergy Spheres Logo" class="w-20 h-20 rounded-full shadow-lg ring-4 ring-indigo-500 animate-bounce">
+    </div>
+    <h2 class="text-4xl font-orbitron font-bold mb-2 animate-pulse">🧰 Legal Tool Suite</h2>
+    <p class="text-gray-300">Curated tools for law students, researchers & legal professionals under Synergy Spheres 3.0</p>
+    <p class="mt-2 text-sm text-gray-400">Developed by @Basytism | Powered by <span class="text-indigo-300">Code Counsel</span> × <span class="text-purple-300">Synergy Spheres 3.0</span></p>
+  </section>
 
-    mediaUpload.addEventListener('change', function () {
-      const file = this.files[0];
-      preview.innerHTML = '';
+  <!-- Tools Grid -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tool Card -->
+      <div class="bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6 transition transform hover:-translate-y-1 hover:scale-105 duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold font-orbitron">📖 Reading Speed Test</h3>
+          <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full font-bold animate-bounce">NEW</span>
+        </div>
+        <p class="text-gray-400 text-sm">Calculate your reading speed by testing with legal judgments or custom uploads. Ideal for common law students.</p>
+        <a href="/reading-speed.html" class="mt-4 inline-block text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-full font-semibold transition duration-200 shadow-lg">🚀 Launch Speed Test</a>
+      </div>
 
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          if (file.type.startsWith('image')) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.className = "mx-auto rounded max-h-64 mt-4";
-            preview.appendChild(img);
-          } else if (file.type.startsWith('video')) {
-            const video = document.createElement('video');
-            video.src = e.target.result;
-            video.controls = true;
-            video.className = "mx-auto rounded max-h-64 mt-4";
-            preview.appendChild(video);
-          }
-        };
-        reader.readAsDataURL(file);
-      }
-    });
+      <!-- Coming Soon Card -->
+      <div class="bg-gray-800 rounded-xl p-6 opacity-50">
+        <h3 class="text-lg font-bold font-orbitron">Coming Soon...</h3>
+        <p class="text-sm text-gray-500">More tools for legal research, drafting, automation, and review workflows.</p>
+      </div>
+    </div>
+  </section>
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      form.classList.add('opacity-50', 'pointer-events-none');
-      confirmation.classList.remove('hidden');
-    });
-  </script>
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-black text-gray-500 text-sm">
+    <p>© 2025 @Basytism | <span class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</span> × Code Counsel</p>
+    <p class="text-xs text-gray-600">Built with ❤️ for legal innovation and decentralization.</p>
+  </footer>
 </body>
 </html>
