@@ -1,126 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SYNERGY SPHERES 3.0</title>
-  <meta name="description" content="Synergyspheres: Bridging businesses from GMB to DAO with AI agents, automation, and Web3.0 technology." />
-
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo-favicon.png" />
-
-  <!-- Custom Font Classes -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Tools – Synergy Spheres 3.0</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    .font-orbitron {
-      font-family: 'Orbitron', sans-serif;
-    }
-    .font-space {
-      font-family: 'Space Grotesk', sans-serif;
-    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-space">
-
-  <!-- Header Navigation -->
-  <header class="bg-gradient-to-r from-purple-900 to-blue-900 shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-900 to-blue-900 shadow-md py-4">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
       <div class="flex items-center space-x-3">
-        <img src="logo-full.png" alt="Synergyspheres Logo" class="w-10 h-10"/>
-        <span class="text-xl font-bold text-white uppercase tracking-wider font-orbitron">SYNERGY SPHERES</span>
+        <img src="/logo-full.png" alt="Synergy Spheres Logo" class="h-10 w-10">
+        <h1 class="text-xl font-bold font-orbitron uppercase tracking-wide">Code Counsel Tools</h1>
       </div>
-      <nav class="space-x-6 text-white font-medium">
-        <a href="#services" class="hover:text-indigo-300">Services</a>
-        <a href="#blogs" class="hover:text-indigo-300">Blogs</a>
-        <a href="#contact" class="hover:text-indigo-300">Contact</a>
-      </nav>
+      <a href="/index.html" class="text-white hover:text-yellow-300 font-medium">← Back to Main Site</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-br from-blue-800 to-purple-900">
+  <!-- Hero -->
+  <section class="text-center py-16 bg-gradient-to-br from-indigo-800 to-purple-800">
     <div class="flex justify-center mb-6">
-      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-28 h-28 animate-bounce" />
+      <img src="/logo-full.png" alt="Synergy Spheres Logo" class="w-20 h-20 rounded-full shadow-lg ring-4 ring-indigo-500">
     </div>
-    <h1 class="text-5xl font-orbitron font-bold">SYNERGY SPHERES 3.0</h1>
-    <p class="mt-4 text-lg">From Google My Business to DAO – Empowering Businesses with Web3</p>
-    <a href="#services" class="mt-6 inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-medium">Explore Services</a>
+    <h2 class="text-4xl font-orbitron font-bold mb-2 animate-pulse">🧰 Legal Tool Suite</h2>
+    <p class="text-gray-300">Curated tools for law students, researchers & legal professionals under Synergy Spheres 3.0</p>
+    <p class="mt-2 text-sm text-gray-400">Developed by @Basytism | Powered by Code Counsel × Synergy Spheres 3.0</p>
   </section>
 
-  <!-- About Section -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold font-orbitron mb-6">What is Synergyspheres?</h2>
-    <p class="text-lg leading-relaxed text-gray-300">
-      Synergyspheres is a Web3-native digital transformation hub helping local and global businesses evolve from traditional structures like Google My Business into decentralized autonomous organizations (DAOs). We blend AI agents, automation pipelines, SEO strategies, and blockchain tooling for measurable growth and freedom.
-    </p>
-  </section>
+  <!-- Tools Grid -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tool Card -->
+      <div class="bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6 transition transform hover:-translate-y-1 hover:scale-105 duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold font-orbitron">📖 Reading Speed Test</h3>
+          <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full font-bold animate-bounce">NEW</span>
+        </div>
+        <p class="text-gray-400 text-sm">Calculate your reading speed by testing with legal judgments or custom uploads. Ideal for common law students.</p>
+        <a href="/reading-speed.html" class="mt-4 inline-block text-indigo-400 hover:text-white font-semibold transition duration-200">Open Tool →</a>
+      </div>
 
-  <!-- Services Section -->
-  <section id="services" class="bg-gray-800 py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center font-orbitron mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Google My Business to DAO</h3>
-          <p class="text-gray-400">We help businesses evolve from centralized directories into decentralized, tokenized communities.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">AI Agents & Automation</h3>
-          <p class="text-gray-400">Deploy GPT-powered agents and workflows to automate customer support, SEO tasks, and lead generation.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Web3 Consultancy</h3>
-          <p class="text-gray-400">Smart contract advisory, DAO governance setup, and secure onboarding to blockchain platforms.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">GMB + Local SEO Boost</h3>
-          <p class="text-gray-400">Tailored SEO strategies to dominate Google Maps, local directories, and hyper-local searches.</p>
-        </div>
+      <!-- Placeholder for more tools -->
+      <div class="bg-gray-800 rounded-xl p-6 opacity-50">
+        <h3 class="text-lg font-bold font-orbitron">Coming Soon...</h3>
+        <p class="text-sm text-gray-500">More tools for legal research, drafting, automation, and review workflows.</p>
       </div>
     </div>
   </section>
 
-  <!-- Upload Redirect Section -->
-  <section id="upload" class="bg-gray-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold font-orbitron text-white mb-6">🎥 Upload & Claim Synergy Coins</h2>
-      <p class="text-gray-400 mb-8">
-        Submit a short video or image review of your experience or project. You'll be redirected to a dedicated page to upload and claim Synergy Coins.
-      </p>
-      <a href="upload.html" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition">
-        🚀 Go to Upload Interface
-      </a>
-    </div>
-  </section>
-  <a href="reading-speed.html" class="text-white hover:underline">Reading Speed Test</a>
-
-  <!-- Blog Placeholder -->
-  <section id="blogs" class="py-16 bg-gray-900">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Latest Blogs</h2>
-      <p class="text-gray-400">Coming soon: Web3 insights, business automation guides, and decentralization case studies.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Get in Touch</h2>
-      <p class="text-gray-400 mb-4">📩 abdulbasitnoor23@gmail.com</p>
-      <p class="text-gray-400 mb-4">🌐 LinkedIn: www.linkedin.com/abdulbasitnoor</p>
-    </div>
-  </section>
-
-  <!-- Footer with Branding -->
+  <!-- Footer -->
   <footer class="text-center py-6 bg-black text-gray-500 text-sm">
-    <p>Powered by <strong class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</strong> | © 2025 @Basytism</p>
-    <p>Bridging Businesses to Web3 – AI, DAO, and Digital Innovation 🌐</p>
+    <p>© 2025 @Basytism | <span class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</span> × Code Counsel</p>
+    <p class="text-xs text-gray-600">Built with ❤️ for legal innovation and decentralization.</p>
   </footer>
-
 </body>
 </html>
