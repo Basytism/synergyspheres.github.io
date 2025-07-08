@@ -159,8 +159,89 @@ function exportPDF() {
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
   };
+  <!-- Button Panel -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+  <!-- 1. Insert Sample Clauses -->
+  <button onclick="insertSampleClauses()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-semibold transition">
+    📌 Insert Sample Clauses
+  </button>
+
+  <!-- 2. Extract Clauses from Uploaded File -->
+  <button onclick="triggerAIExtraction()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded font-semibold transition">
+    🤖 AI Extract Clauses
+  </button>
+
+  <!-- 3. Reset Contract Form -->
+  <button type="reset" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded font-semibold transition">
+    🔄 Reset Form
+  </button>
+
+  <!-- 4. Export Contract as PDF -->
+  <button onclick="exportPDF()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-semibold transition">
+    📄 Export as PDF
+  </button>
+
+  <!-- 5. Save Clauses to Firebase (Optional) -->
+  <button onclick="saveToFirebase()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded font-semibold transition">
+    ☁️ Save to Firebase
+  </button>
+</div>
+
   html2pdf().from(element).set(opt).save();
+}<script>
+// 1. Insert Sample Clauses
+function insertSampleClauses() {
+  const sample = `1. Confidentiality: Both parties agree to keep all terms private.
+2. Termination: Either party may terminate with 30 days notice.
+3. Dispute Resolution: All disputes shall be settled via arbitration.`;
+  document.getElementById("editableClauses").value += "\\n\\n" + sample;
 }
+
+// 2. Trigger AI Extraction manually (only after upload)
+function triggerAIExtraction() {
+  const preview = document.getElementById("filePreview").textContent;
+  if (!preview.trim()) return alert("No file content detected.");
+  alert("Sending to AI for clause extraction...");
+
+  fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer YOUR_OPENAI_API_KEY'
+    },
+    body: JSON.stringify({
+      model: 'gpt-4',
+      messages: [{ role: 'user', content: `Extract legal clauses from this contract:\\n\\n${preview}` }]
+    })
+  }).then(res => res.json()).then(result => {
+    const aiOutput = result.choices[0]?.message?.content || 'No clauses found.';
+    document.getElementById('editableClauses').value += "\\n\\n📌 AI Extracted Clauses:\\n" + aiOutput;
+  }).catch(error => console.error('AI API failed:', error));
+}
+
+// 3. Export Contract as PDF
+function exportPDF() {
+  const element = document.getElementById('legalflow-tool');
+  html2pdf().from(element).set({
+    margin: 0.5,
+    filename: 'LegalFlow_Contract.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  }).save();
+}
+
+// 4. Firebase Save (Optional)
+function saveToFirebase() {
+  const clauseText = document.getElementById("editableClauses").value;
+  set(clauseRef, clauseText).then(() => {
+    alert("Clause content saved to Firebase.");
+  }).catch((err) => {
+    console.error("Firebase save failed:", err);
+  });
+}
+</script>
+
 </script>
 
 <!-- File Preview Section -->
