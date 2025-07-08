@@ -12,30 +12,32 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
 
+  <!-- AOS for Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo-favicon.png" />
 
-  <!-- Custom Font Classes & Animations -->
+  <!-- Custom Styles -->
   <style>
-    .font-orbitron {
-      font-family: 'Orbitron', sans-serif;
-    }
-    .font-space {
-      font-family: 'Space Grotesk', sans-serif;
-    }
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .animate-spin-slow {
-      animation: spin-slow 8s linear infinite;
-    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+    .perspective { perspective: 1000px; }
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(31, 41, 55, 0.8); }
   </style>
 </head>
-<body class="bg-gray-900 text-white font-space">
 
-  <!-- Header Navigation -->
-  <header class="bg-gradient-to-r from-purple-900 to-blue-900 shadow-md">
+<body id="top" class="bg-gray-900 text-white font-space">
+
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <img src="logo-full.png" class="animate-bounce w-16 h-16" />
+  </div>
+
+  <!-- Header -->
+  <header class="shadow-md">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center space-x-3">
         <img src="logo-full.png" alt="Synergyspheres Logo" class="w-10 h-10 animate-spin-slow"/>
@@ -43,14 +45,16 @@
       </div>
       <nav class="space-x-6 text-white font-medium">
         <a href="#services" class="hover:text-indigo-300">Services</a>
+        <a href="#products" class="hover:text-indigo-300">Products</a>
         <a href="#blogs" class="hover:text-indigo-300">Blogs</a>
         <a href="#contact" class="hover:text-indigo-300">Contact</a>
         <a href="reading-speed.html" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-semibold transition transform hover:scale-105">📖 Speed Test Tool</a>
+        <button id="themeToggle" class="text-white hover:text-yellow-300">🌙</button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="text-center py-20 bg-gradient-to-br from-blue-800 to-purple-900">
     <div class="flex justify-center mb-6">
       <img src="logo-full.png" alt="Synergyspheres Logo" class="w-28 h-28 animate-bounce" />
@@ -60,74 +64,108 @@
     <a href="#services" class="mt-6 inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-medium transition transform hover:scale-105">Explore Services</a>
   </section>
 
-  <!-- About Section -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
+  <!-- About -->
+  <section class="max-w-5xl mx-auto px-6 py-16" data-aos="fade-up">
     <h2 class="text-3xl font-bold font-orbitron mb-6">What is Synergyspheres?</h2>
     <p class="text-lg leading-relaxed text-gray-300">
       Synergyspheres is a Web3-native digital transformation hub helping local and global businesses evolve from traditional structures like Google My Business into decentralized autonomous organizations (DAOs). We blend AI agents, automation pipelines, SEO strategies, and blockchain tooling for measurable growth and freedom.
     </p>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services" class="bg-gray-800 py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center font-orbitron mb-12">Our Services</h2>
+      <h2 class="text-3xl font-bold text-center font-orbitron mb-12" data-aos="fade-up">Our Services</h2>
       <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2 font-orbitron">Google My Business to DAO</h3>
-          <p class="text-gray-400">We help businesses evolve from centralized directories into decentralized, tokenized communities.</p>
+          <p class="text-gray-300">Evolve from centralized business listings into decentralized, tokenized ecosystems.</p>
         </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
           <h3 class="text-xl font-semibold mb-2 font-orbitron">AI Agents & Automation</h3>
-          <p class="text-gray-400">Deploy GPT-powered agents and workflows to automate customer support, SEO tasks, and lead generation.</p>
+          <p class="text-gray-300">Deploy GPT-powered agents and pipelines to automate tasks intelligently.</p>
         </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
           <h3 class="text-xl font-semibold mb-2 font-orbitron">Web3 Consultancy</h3>
-          <p class="text-gray-400">Smart contract advisory, DAO governance setup, and secure onboarding to blockchain platforms.</p>
+          <p class="text-gray-300">Smart contract advisory, DAO governance, and blockchain onboarding.</p>
         </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
           <h3 class="text-xl font-semibold mb-2 font-orbitron">GMB + Local SEO Boost</h3>
-          <p class="text-gray-400">Tailored SEO strategies to dominate Google Maps, local directories, and hyper-local searches.</p>
+          <p class="text-gray-300">Local SEO strategies for visibility on Google Maps, directories, and search.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Upload Redirect Section -->
-  <section id="upload" class="bg-gray-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold font-orbitron text-white mb-6">🎥 Upload & Claim Synergy Coins</h2>
-      <p class="text-gray-400 mb-8">
-        Submit a short video or image review of your experience or project. You'll be redirected to a dedicated page to upload and claim Synergy Coins.
+  <!-- Products -->
+  <section id="products" class="bg-gray-900 py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center text-white">
+      <h2 class="text-3xl font-bold font-orbitron mb-6" data-aos="fade-up">🚀 Our Products</h2>
+      <p class="text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
+        Launched on Gumroad — Explore ready-to-use automation packs, legal tech templates, and AI tools.
       </p>
-      <a href="upload.html" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition">
-        🚀 Go to Upload Interface
+      <a href="https://synergyspheres.gumroad.com/" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 mb-10" data-aos="fade-up" data-aos-delay="200">
+        🌐 Visit Our Gumroad Store
       </a>
+
+      <!-- Reveal Button -->
+      <button onclick="document.getElementById('product-grid').classList.remove('hidden'); this.style.display='none';"
+        class="mt-6 bg-white text-gray-900 px-6 py-2 rounded-full font-medium transition hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+        View Our Launched Products
+      </button>
+
+      <!-- Product Cards -->
+      <div id="product-grid" class="grid md:grid-cols-3 gap-8 mt-12 hidden">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up">
+          <h3 class="text-xl font-semibold font-orbitron mb-2">⚡ Business AI Pack</h3>
+          <p class="text-gray-300 mb-3">Complete bundle for automation workflows, GPT prompt packs, and dashboards.</p>
+          <a href="https://synergyspheres.gumroad.com/l/business-ai-pack" class="text-indigo-400 underline">View on Gumroad</a>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold font-orbitron mb-2">📜 LegalFlow Contract Suite</h3>
+          <p class="text-gray-300 mb-3">Auto-fillable legal contract templates with editable clauses and branding.</p>
+          <a href="https://synergyspheres.gumroad.com/l/legalflow-suite" class="text-indigo-400 underline">View on Gumroad</a>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold font-orbitron mb-2">📊 Reading Speed Tool</h3>
+          <p class="text-gray-300 mb-3">Modern tool to test reading speed for agencies and productivity analysts.</p>
+          <a href="https://synergyspheres.gumroad.com/l/readingspeedtool" class="text-indigo-400 underline">View on Gumroad</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Blog Placeholder -->
-  <section id="blogs" class="py-16 bg-gray-900">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Latest Blogs</h2>
-      <p class="text-gray-400">Coming soon: Web3 insights, business automation guides, and decentralization case studies.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gray-800 text-center">
+    <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl font-bold font-orbitron mb-6">Get in Touch</h2>
       <p class="text-gray-400 mb-4">📩 abdulbasitnoor23@gmail.com</p>
-      <p class="text-gray-400 mb-4">🌐 LinkedIn: www.linkedin.com/abdulbasitnoor</p>
+      <p class="text-gray-400 mb-4">🌐 LinkedIn: www.linkedin.com/in/abdulbasitnoor</p>
     </div>
   </section>
 
-  <!-- Footer with Branding -->
+  <!-- Footer -->
   <footer class="text-center py-6 bg-black text-gray-500 text-sm">
     <p>Powered by <strong class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</strong> | © 2025 @Basytism</p>
     <p>Bridging Businesses to Web3 – AI, DAO, and Digital Innovation 🌐</p>
   </footer>
 
+  <!-- Floating Button -->
+  <a href="#top" class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110 z-50">⬆️</a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("bg-white");
+      document.body.classList.toggle("text-gray-900");
+      document.body.classList.toggle("bg-gray-900");
+      document.body.classList.toggle("text-white");
+    });
+  </script>
 </body>
 </html>
