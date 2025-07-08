@@ -1,7 +1,7 @@
 # 🌐 Synergyspheres 3.0 – From GMB to DAO
 
 **Official Repository for Synergyspheres 3.0**  
-*Founder: Abdul Basit Noor*
+*Founder: Abdul Basit Noor* @Basytism
 
 A modern Web3.0 protocol and service layer transforming traditional businesses (especially Google My Business users) into autonomous, intelligent, and decentralized economic entities.
 
