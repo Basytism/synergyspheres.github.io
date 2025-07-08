@@ -6,295 +6,106 @@
   <title>SYNERGY SPHERES 3.0</title>
   <meta name="description" content="Synergyspheres: Bridging businesses from GMB to DAO with AI agents, automation, and Web3.0 technology." />
 
-  <!-- Tailwind CSS -->
+  <!-- Styles & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- AOS for Scroll Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo-favicon.png" />
 
-  <!-- Custom Styles -->
   <style>
     .font-orbitron { font-family: 'Orbitron', sans-serif; }
     .font-space { font-family: 'Space Grotesk', sans-serif; }
     @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .animate-spin-slow { animation: spin-slow 8s linear infinite; }
     .perspective { perspective: 1000px; }
-    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(31, 41, 55, 0.8); }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(31, 41, 55, 0.8);
+    }
   </style>
 </head>
 
 <body id="top" class="bg-gray-900 text-white font-space">
 
-  <!-- Preloader -->
-  <div id="preloader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-    <img src="logo-full.png" class="animate-bounce w-16 h-16" />
-  </div>
-
-  <!-- Header -->
-  <header class="shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="flex items-center space-x-3">
-        <img src="logo-full.png" alt="Synergyspheres Logo" class="w-10 h-10 animate-spin-slow"/>
-        <span class="text-xl font-bold text-white uppercase tracking-wider font-orbitron">SYNERGY SPHERES</span>
-      </div>
-      <nav class="space-x-6 text-white font-medium">
-        <a href="#services" class="hover:text-indigo-300">Services</a>
-        <a href="#products" class="hover:text-indigo-300">Products</a>
-        <a href="#blogs" class="hover:text-indigo-300">Blogs</a>
-        <a href="#contact" class="hover:text-indigo-300">Contact</a>
-        <a href="reading-speed.html" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-semibold transition transform hover:scale-105">📖 Speed Test Tool</a>
-        <button id="themeToggle" class="text-white hover:text-yellow-300">🌙</button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-br from-blue-800 to-purple-900">
-    <div class="flex justify-center mb-6">
-      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-28 h-28 animate-bounce" />
-    </div>
-    <h1 class="text-5xl font-orbitron font-bold">SYNERGY SPHERES 3.0</h1>
-    <p class="mt-4 text-lg">From Google My Business to DAO – Empowering Businesses with Web3</p>
-    <a href="#services" class="mt-6 inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-medium transition transform hover:scale-105">Explore Services</a>
-  </section>
-
-  <!-- About -->
-  <section class="max-w-5xl mx-auto px-6 py-16" data-aos="fade-up">
-    <h2 class="text-3xl font-bold font-orbitron mb-6">What is Synergyspheres?</h2>
-    <p class="text-lg leading-relaxed text-gray-300">
-      Synergyspheres is a Web3-native digital transformation hub helping local and global businesses evolve from traditional structures like Google My Business into decentralized autonomous organizations (DAOs). We blend AI agents, automation pipelines, SEO strategies, and blockchain tooling for measurable growth and freedom.
-    </p>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="bg-gray-800 py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center font-orbitron mb-12" data-aos="fade-up">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Google My Business to DAO</h3>
-          <p class="text-gray-300">Evolve from centralized business listings into decentralized, tokenized ecosystems.</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">AI Agents & Automation</h3>
-          <p class="text-gray-300">Deploy GPT-powered agents and pipelines to automate tasks intelligently.</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Web3 Consultancy</h3>
-          <p class="text-gray-300">Smart contract advisory, DAO governance, and blockchain onboarding.</p>
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">GMB + Local SEO Boost</h3>
-          <p class="text-gray-300">Local SEO strategies for visibility on Google Maps, directories, and search.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- Products -->
-<section id="products" class="bg-gray-900 py-16 px-6">
-  <div class="max-w-5xl mx-auto text-center text-white">
-    <h2 class="text-3xl font-bold font-orbitron mb-6" data-aos="fade-up">🚀 Our Products</h2>
-    <p class="text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
-      Launched on Gumroad — Explore ready-to-use automation packs, legal tech templates, and AI tools.
-    </p>
-    <a href="https://synergyspheres.gumroad.com/" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 mb-10" data-aos="fade-up" data-aos-delay="200">
-      🌐 Visit Our Gumroad Store
-    </a>
-
-    <div class="grid md:grid-cols-3 gap-8 mt-12">
-      <!-- Product 1 -->
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up">
-        <h3 class="text-xl font-semibold font-orbitron mb-2">⚡ Business AI Pack</h3>
-        <p class="text-gray-300 mb-3">Automation workflows, GPT prompts, dashboards & more.</p>
-        <a href="https://synergyspheres.gumroad.com/l/business-ai-pack" class="text-indigo-400 underline">View on Gumroad</a>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl font-semibold font-orbitron mb-2">📜 LegalFlow Contract Suite</h3>
-        <p class="text-gray-300 mb-3">Auto-fillable legal templates, clause editor, branding & more.</p>
-        <a href="https://synergyspheres.gumroad.com/l/legalflow-suite" class="text-indigo-400 underline">View on Gumroad</a>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-xl font-semibold font-orbitron mb-2">📊 Reading Speed Tool</h3>
-        <p class="text-gray-300 mb-3">Modern tool for productivity analysts & training agencies.</p>
-        <a href="https://synergyspheres.gumroad.com/l/readingspeedtool" class="text-indigo-400 underline">View on Gumroad</a>
-      </div>
+  <!-- ============================= -->
+  <!-- ✳️ GITHUB LINKS SECTION START -->
+  <div class="text-center py-12 px-4">
+    <h2 class="text-3xl font-orbitron font-bold mb-4">📂 GitHub Repository Access</h2>
+    <p class="text-gray-400 mb-6">Access individual tools or documentation files directly from our GitHub repository:</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://github.com/youruser/repo/blob/main/business-ai-pack.md" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105">
+        📦 View Business AI Pack
+      </a>
+      <a href="https://github.com/youruser/repo/blob/main/legalflow/README.md" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105">
+        📄 Launch LegalFlow Tool
+      </a>
     </div>
   </div>
-</section>
+  <!-- ✳️ GITHUB LINKS SECTION END -->
+  <!-- ============================= -->
 
-<!-- Gumroad Product Links (Keep as Additional Section or Integrate as Desired) -->
-<section class="bg-gray-950 py-16 px-6">
-  <div class="max-w-5xl mx-auto text-center text-white">
-    <h2 class="text-3xl font-bold font-orbitron mb-6" data-aos="fade-up">🛍️ Explore More Products</h2>
-    <p class="text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="100">
-      Launched and trusted — Our digital tools & templates are hosted on Gumroad.
-    </p>
-    <a href="https://synergyspheres.gumroad.com/" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 mb-4" data-aos="fade-up" data-aos-delay="200">
-      🌐 Visit Our Gumroad Store
-    </a>
-  </div>
-</section>
-
-<!-- JavaScript Logic -->
-<script>
-function handleFileUpload(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    console.log('File content loaded (placeholder):', reader.result.slice(0, 100));
-    alert('File uploaded successfully. Fields and clauses detected (simulated).');
-  };
-  reader.readAsText(file);
-}
-
-// Drag-and-drop reordering for clause editor
-const clauseEditor = document.getElementById('clauseEditor');
-let dragSrcEl = null;
-
-clauseEditor.addEventListener('dragstart', function (e) {
-  dragSrcEl = e.target;
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', e.target.outerHTML);
-  e.target.classList.add('opacity-50');
-});
-
-clauseEditor.addEventListener('dragover', function (e) {
-  e.preventDefault();
-  e.dataTransfer.dropEffect = 'move';
-});
-
-clauseEditor.addEventListener('drop', function (e) {
-  e.preventDefault();
-  if (dragSrcEl !== e.target && e.target.classList.contains('clause')) {
-    clauseEditor.removeChild(dragSrcEl);
-    const dropHTML = e.dataTransfer.getData('text/html');
-    e.target.insertAdjacentHTML('beforebegin', dropHTML);
-    clauseEditor.querySelectorAll('.clause').forEach(c => c.classList.remove('opacity-50'));
-  }
-});
-</script>
-
-        </div>
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="text-xl font-semibold font-orbitron mb-2">📊 Reading Speed Tool</h3>
-          <p class="text-gray-300 mb-3">Modern tool to test reading speed for agencies and productivity analysts.</p>
-          <a href="https://synergyspheres.gumroad.com/l/readingspeedtool" class="text-indigo-400 underline">View on Gumroad</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-gray-800 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Get in Touch</h2>
-      <p class="text-gray-400 mb-4">📩 abdulbasitnoor23@gmail.com</p>
-      <p class="text-gray-400 mb-4">🌐 LinkedIn: www.linkedin.com/in/abdulbasitnoor</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-black text-gray-500 text-sm">
-    <p>Powered by <strong class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</strong> | © 2025 @Basytism</p>
-    <p>Bridging Businesses to Web3 – AI, DAO, and Digital Innovation 🌐</p>
-  </footer>
-
-  <!-- Floating Button -->
-  <a href="#top" class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110 z-50">⬆️</a>
-
-  <!-- Scripts -->
+  <!-- AOS Scroll Animation Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
+
     window.addEventListener("load", () => {
-      document.getElementById("preloader").style.display = "none";
+      const preloader = document.getElementById("preloader");
+      if (preloader) preloader.style.display = "none";
+
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("bg-white");
+          document.body.classList.toggle("text-gray-900");
+          document.body.classList.toggle("bg-gray-900");
+          document.body.classList.toggle("text-white");
+        });
+      }
+
+      const clauseEditor = document.getElementById('clauseEditor');
+      if (clauseEditor) {
+        let dragSrcEl = null;
+        clauseEditor.addEventListener('dragstart', function (e) {
+          dragSrcEl = e.target;
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/html', e.target.outerHTML);
+          e.target.classList.add('opacity-50');
+        });
+        clauseEditor.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+        });
+        clauseEditor.addEventListener('drop', function (e) {
+          e.preventDefault();
+          if (dragSrcEl !== e.target && e.target.classList.contains('clause')) {
+            clauseEditor.removeChild(dragSrcEl);
+            const dropHTML = e.dataTransfer.getData('text/html');
+            e.target.insertAdjacentHTML('beforebegin', dropHTML);
+            clauseEditor.querySelectorAll('.clause').forEach(c => c.classList.remove('opacity-50'));
+          }
+        });
+      }
     });
-    document.getElementById("themeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("bg-white");
-      document.body.classList.toggle("text-gray-900");
-      document.body.classList.toggle("bg-gray-900");
-      document.body.classList.toggle("text-white");
-    });function toggleModal(id) {
-  const modal = document.getElementById(id);
-  modal.classList.toggle('hidden');
-}
 
-  </script><!-- Modal Toggle Button -->
-<button onclick="toggleModal('legalflowModal')" class="mt-6 bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 shadow-md">
-  ⚙️ Launch LegalFlow Tool
-</button>
+    function toggleModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.toggle('hidden');
+    }
 
-<!-- LegalFlow Modal -->
-<div id="legalflowModal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
-  <div class="bg-gray-800 border border-indigo-600 rounded-xl p-8 w-full max-w-4xl shadow-2xl relative">
-    <!-- Close Button -->
-    <button onclick="toggleModal('legalflowModal')" class="absolute top-4 right-4 text-white text-xl hover:text-red-500">✖</button>
-
-    <!-- Modal Content -->
-    <div class="grid md:grid-cols-2 gap-6 text-left text-white">
-      <!-- Upload -->
-      <div>
-        <h3 class="text-2xl font-orbitron mb-2">🧾 Upload Contract Template</h3>
-        <p class="text-indigo-300 mb-4 text-sm">DOCX or PDF supported.</p>
-        <input type="file" id="contractFile" accept=".docx,.pdf" class="w-full file:bg-indigo-600 file:text-white file:px-4 file:py-2 file:rounded-md bg-gray-900 text-white border border-indigo-400 rounded-md p-2" onchange="handleFileUpload(event)" />
-      </div>
-
-      <!-- Fields -->
-      <div>
-        <h3 class="text-2xl font-orbitron mb-2">📝 Fill Dynamic Fields</h3>
-        <form id="dynamicFieldsForm" class="space-y-4">
-          <label class="block">
-            <span>Client Name</span>
-            <input type="text" name="client_name" placeholder="e.g. Acme Corp" class="mt-1 w-full bg-gray-900 border border-indigo-400 rounded-md p-2 text-white" />
-          </label>
-          <label class="block">
-            <span>Effective Date</span>
-            <input type="date" name="effective_date" class="mt-1 w-full bg-gray-900 border border-indigo-400 rounded-md p-2 text-white" />
-          </label>
-          <label class="block">
-            <span>Scope of Work</span>
-            <textarea name="scope_of_work" rows="3" placeholder="Brief description..." class="mt-1 w-full bg-gray-900 border border-indigo-400 rounded-md p-2 text-white"></textarea>
-          </label>
-        </form>
-      </div>
-    </div>
-
-    <!-- Clauses -->
-    <div class="mt-10">
-      <h3 class="text-2xl font-orbitron mb-4">✍️ Editable Clauses</h3>
-      <div id="clauseEditor" class="grid gap-4 bg-gray-900 border border-indigo-500 p-4 rounded-lg">
-        <div draggable="true" class="clause bg-gray-700 p-3 rounded shadow hover:bg-gray-600 cursor-move">Clause 1: Payment Terms</div>
-        <div draggable="true" class="clause bg-gray-700 p-3 rounded shadow hover:bg-gray-600 cursor-move">Clause 2: Confidentiality</div>
-        <div draggable="true" class="clause bg-gray-700 p-3 rounded shadow hover:bg-gray-600 cursor-move">Clause 3: Termination</div>
-      </div>
-    </div>
-
-    <!-- Actions -->
-    <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition transform hover:scale-105">
-        📄 Generate Filled Contract
-      </button>
-      <a href="#" class="text-indigo-300 hover:underline text-sm">Need help? View user guide</a>
-    </div>
-
-    <!-- Footer -->
-    <div class="mt-8 text-center text-sm text-gray-400 border-t border-gray-700 pt-4">
-      🔗 <strong class="text-indigo-400 font-orbitron">Synergy Spheres 3.0</strong> | Empowering Legal UX with AI & Web3 ⛓️
-    </div>
-  </div>
-</div>
-
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        console.log('File content loaded (placeholder):', reader.result.slice(0, 100));
+        alert('File uploaded successfully. Fields and clauses detected (simulated).');
+      };
+      reader.readAsText(file);
+    }
+  </script>
 </body>
 </html>
