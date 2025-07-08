@@ -226,7 +226,11 @@ clauseEditor.addEventListener('drop', function (e) {
       document.body.classList.toggle("text-gray-900");
       document.body.classList.toggle("bg-gray-900");
       document.body.classList.toggle("text-white");
-    });
+    });function toggleModal(id) {
+  const modal = document.getElementById(id);
+  modal.classList.toggle('hidden');
+}
+
   </script><!-- Modal Toggle Button -->
 <button onclick="toggleModal('legalflowModal')" class="mt-6 bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105 shadow-md">
   ⚙️ Launch LegalFlow Tool
