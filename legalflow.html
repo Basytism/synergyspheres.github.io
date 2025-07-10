@@ -5,7 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legal Drafting Generator | Synergyspheres</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/6.2.4/docx.min.js"></script>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+    import { getDatabase, ref, set, onValue } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js';
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+      projectId: "YOUR_PROJECT",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const clauseRef = ref(db, 'legaldrafting/clause');
+
+    const previewEl = document.getElementById('preview');
+
+    function syncFirebase(content) {
+      set(clauseRef, content);
+    }
+
+    onValue(clauseRef, (snapshot) => {
+      if (document.activeElement.id !== 'preview') {
+        previewEl.textContent = snapshot.val() || '';
+      }
+    });
+  </script>
 </head>
 <body class="bg-gray-100 font-sans">
   <header class="bg-indigo-800 text-white p-4 text-center font-bold text-xl shadow">Legal Drafting Generator – 🇵🇰 Pakistan Format</header>
@@ -23,11 +55,19 @@
         <label class="block mt-4 mb-2 font-medium">Case No</label>
         <input id="caseNo" class="w-full p-2 border rounded" placeholder="2025-CIV-001">
 
-        <label class="block mt-4 mb-2 font-medium">Plaintiff Name</label>
-        <input id="plaintiff" class="w-full p-2 border rounded" placeholder="Ahmed Khan">
+        <label class="block mt-4 mb-2 font-medium">Suit Type</label>
+        <select id="suitType" class="w-full p-2 border rounded">
+          <option value="Recovery of Money">Recovery of Money</option>
+          <option value="Specific Performance">Specific Performance</option>
+          <option value="Custody of Minor">Custody of Minor</option>
+          <option value="Permanent Injunction">Permanent Injunction</option>
+        </select>
 
-        <label class="block mt-4 mb-2 font-medium">Defendant Name</label>
-        <input id="defendant" class="w-full p-2 border rounded" placeholder="Zeeshan Malik">
+        <label class="block mt-4 mb-2 font-medium">Plaintiff(s) Name (comma separated)</label>
+        <input id="plaintiff" class="w-full p-2 border rounded" placeholder="Ahmed Khan, Ali Raza">
+
+        <label class="block mt-4 mb-2 font-medium">Defendant(s) Name (comma separated)</label>
+        <input id="defendant" class="w-full p-2 border rounded" placeholder="Zeeshan Malik, Kamran Shah">
 
         <label class="block mt-4 mb-2 font-medium">Cause of Action</label>
         <textarea id="cause" class="w-full p-2 border rounded" placeholder="On 12 June, Defendant failed to pay..." rows="3"></textarea>
@@ -44,12 +84,22 @@
         <label class="block mt-4 mb-2 font-medium">Date</label>
         <input type="date" id="date" class="w-full p-2 border rounded">
 
-        <button onclick="generatePreview()" class="mt-6 w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700">🔍 Preview</button>
-        <button onclick="downloadPDF()" class="mt-2 w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">📄 Export PDF</button>
+        <label class="block mt-4 mb-2 font-medium">Language</label>
+        <select id="language" class="w-full p-2 border rounded">
+          <option value="en">English</option>
+          <option value="ur">اردو</option>
+        </select>
+
+        <div class="grid grid-cols-2 gap-2 mt-6">
+          <button onclick="generatePreview()" class="bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700">🔍 Preview</button>
+          <button onclick="clearForm()" class="bg-red-600 text-white p-2 rounded hover:bg-red-700">❌ Clear</button>
+          <button onclick="downloadPDF()" class="bg-green-600 text-white p-2 rounded hover:bg-green-700 col-span-2">📄 Export PDF</button>
+          <button onclick="downloadDOCX()" class="bg-yellow-600 text-white p-2 rounded hover:bg-yellow-700 col-span-2">📄 Export DOCX</button>
+        </div>
       </div>
 
       <!-- Preview Section -->
-      <div id="preview" class="bg-white p-6 rounded shadow overflow-auto whitespace-pre-wrap text-gray-900 text-sm">
+      <div id="preview" class="bg-white p-6 rounded shadow overflow-auto whitespace-pre-wrap text-gray-900 text-sm" contenteditable="true">
         <em>Preview will appear here...</em>
       </div>
     </div>
@@ -58,67 +108,91 @@
   <footer class="text-center text-gray-500 py-4 mt-8 border-t">Built with vision by @basytism • Synergyspheres 3.0</footer>
 
   <script>
-    function generatePreview() {
-      const court = document.getElementById('court').value;
-      const caseNo = document.getElementById('caseNo').value;
-      const plaintiff = document.getElementById('plaintiff').value;
-      const defendant = document.getElementById('defendant').value;
-      const cause = document.getElementById('cause').value;
-      const relief = document.getElementById('relief').value;
-      const valuation = document.getElementById('valuation').value;
-      const lawyer = document.getElementById('lawyer').value;
-      const date = document.getElementById('date').value;
-
-      const plaintText = `
-${court.toUpperCase()}
-
-CASE NO: ${caseNo}
-
-Between:
-${plaintiff}, ...........Plaintiff
-
-And
-${defendant}, ...........Defendant
-
-SUIT FOR RECOVERY / RELIEF
-
-RESPECTED SIR,
-
-1. That the plaintiff is a citizen of Pakistan and a law-abiding individual.
-2. That the cause of action arose on ${date} when the defendant ${cause}.
-3. That this Honorable Court has jurisdiction to entertain the present suit.
-4. That the value of the suit is ${valuation} and requisite court fee has been affixed.
-5. That the plaintiff respectfully prays for:
-   i. ${relief}
-   ii. Cost of the suit
-   iii. Any other relief deemed fit
-
-6. That the contents of this plaint are true and correct.
-
-Filed by:
-${plaintiff}
-Through Counsel: ${lawyer}
-
-VERIFICATION:
-Verified at Multan this ${date}.
-
-AFFIDAVIT:
-I, ${plaintiff}, state on oath that contents are true and correct.`;
-
-      document.getElementById('preview').textContent = plaintText;
+    function clearForm() {
+      document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      document.getElementById('language').value = 'en';
+      document.getElementById('preview').textContent = 'Preview will appear here...';
+      syncFirebase('');
     }
 
-    function downloadPDF() {
-      const element = document.getElementById('preview');
-      const opt = {
-        margin: 0.5,
-        filename: 'LegalDraft_Pakistan.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-      html2pdf().from(element).set(opt).save();
+    function downloadDOCX() {
+      const doc = new window.docx.Document({
+        sections: [{
+          properties: {},
+          children: [new window.docx.Paragraph({ text: document.getElementById('preview').textContent })]
+        }]
+      });
+      window.docx.Packer.toBlob(doc).then(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'LegalDraft_Pakistan.docx';
+        link.click();
+      });
     }
   </script>
-</body>
+</body><script>
+function generatePreview() {
+  const court = document.getElementById('court').value;
+  const caseNo = document.getElementById('caseNo').value;
+  const suitType = document.getElementById('suitType').value;
+  const plaintiff = document.getElementById('plaintiff').value;
+  const defendant = document.getElementById('defendant').value;
+  const cause = document.getElementById('cause').value;
+  const relief = document.getElementById('relief').value;
+  const valuation = document.getElementById('valuation').value;
+  const lawyer = document.getElementById('lawyer').value;
+  const date = document.getElementById('date').value;
+  const lang = document.getElementById('language').value;
+
+  let content = '';
+
+  if (lang === 'ur') {
+    content = `
+      <div style="font-family: 'Noto Nastaliq Urdu', serif; direction: rtl;">
+        <h2 style="text-align: center; font-weight: bold;">${court}</h2>
+        <p style="text-align: center;"><strong>مقدمہ نمبر:</strong> ${caseNo}</p>
+        <h3 style="text-align: center;">${suitType} کا دعویٰ</h3>
+        <p><strong>مدعیان:</strong> ${plaintiff}</p>
+        <p><strong>مدعا علیہان:</strong> ${defendant}</p>
+        <p><strong>اسباب دعویٰ:</strong><br>${cause}</p>
+        <p><strong>استدعا:</strong><br>${relief}</p>
+        <p><strong>قیمت دعویٰ و عدالت فیس:</strong> ${valuation}</p>
+        <br><br>
+        <p><strong>وکیل:</strong> ${lawyer}</p>
+        <p><strong>تاریخ:</strong> ${date}</p>
+        <br>
+        <h4 style="text-align:center;">حلف نامہ</h4>
+        <p>میں حلفیہ بیان دیتا ہوں کہ اوپر دیا گیا مواد درست اور سچ ہے۔</p>
+        <p style="margin-top: 40px;"><strong>دستخط:</strong> __________</p>
+      </div>
+    `;
+  } else {
+    content = `
+      <div style="font-family: 'Georgia', serif;">
+        <h2 style="text-align: center; font-weight: bold;">${court}</h2>
+        <p style="text-align: center;"><strong>Case No:</strong> ${caseNo}</p>
+        <h3 style="text-align: center; text-decoration: underline;">SUIT FOR ${suitType.toUpperCase()}</h3>
+        <p><strong>PLAINTIFF(S):</strong> ${plaintiff}</p>
+        <p><strong>DEFENDANT(S):</strong> ${defendant}</p>
+        <hr>
+        <p><strong>CAUSE OF ACTION:</strong><br>${cause}</p>
+        <p><strong>PRAYER / RELIEF SOUGHT:</strong><br>${relief}</p>
+        <p><strong>VALUATION & COURT FEE:</strong> ${valuation}</p>
+        <br><br>
+        <p><strong>Filed by:</strong><br>${lawyer}</p>
+        <p><strong>Date:</strong> ${date}</p>
+        <br>
+        <h4 style="text-align:center;">AFFIDAVIT</h4>
+        <p>I solemnly affirm that the contents of the plaint are true and correct to the best of my knowledge and belief.</p>
+        <p style="margin-top: 40px;"><strong>Signature:</strong> __________</p>
+      </div>
+    `;
+  }
+
+  const preview = document.getElementById('preview');
+  preview.innerHTML = content;
+  syncFirebase(preview.textContent);
+}
+</script>
+
 </html>
