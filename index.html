@@ -59,31 +59,86 @@
   <header class="bg-black bg-opacity-90 border-b border-indigo-500 shadow-2xl backdrop-blur-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-5">
     <div class="flex items-center space-x-4">
-      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-16 h-16 animate-3d-rotate drop-shadow-2xl" />
+      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-20 h-20 md:w-24 md:h-24 drop-shadow-2xl transition duration-300" />
       <span class="text-3xl md:text-4xl font-bold text-indigo-400 uppercase tracking-wide font-orbitron">Synergyspheres 3.0</span>
     </div>
-    <nav class="space-x-4 mt-4 md:mt-0 text-sm md:text-base font-medium text-gray-200">
-      <a href="#about" class="hover:text-indigo-400 transition duration-300">About</a>
-      <a href="#products" class="hover:text-indigo-400 transition duration-300">Products</a>
-      <a href="#features" class="hover:text-indigo-400 transition duration-300">Features</a>
-      <a href="#testimonials" class="hover:text-indigo-400 transition duration-300">Testimonials</a>
-      <a href="#blog" class="hover:text-indigo-400 transition duration-300">Blog</a>
-      <a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a>
-    </nav>
+    <button class="block md:hidden text-gray-300 hover:text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      ☰
+    </button>
+    <nav id="mobile-menu" class="w-full md:w-auto md:flex space-y-4 md:space-y-0 md:space-x-4 mt-4 md:mt-0 text-sm md:text-base font-medium text-gray-200 hidden md:block">
+  <a href="index.html" class="block md:inline hover:text-indigo-400 transition duration-300">Home</a>
+  <a href="products.html" class="block md:inline hover:text-indigo-400 transition duration-300">Products</a>
+  <a href="https://synergyspheres.gumroad.com/l/legalflow-pro" class="block md:inline hover:text-indigo-400 transition duration-300" target="_blank">LegalFlow Pro</a>
+  <a href="https://synergyspheres.gumroad.com/l/rcm-suite" class="block md:inline hover:text-indigo-400 transition duration-300" target="_blank">RCM Suite</a>
+  <a href="https://synergyspheres.gumroad.com/l/speed-tool" class="block md:inline hover:text-indigo-400 transition duration-300" target="_blank">Speed Tool</a>
+    <a href="whitepaper.html" class="block md:inline hover:text-indigo-400 transition duration-300">Whitepaper</a>
+  <a href="https://synergyspheres.gumroad.com/" class="block md:inline hover:text-indigo-400 transition duration-300" target="_blank">Order</a>
+  <a href="#about" class="block md:inline hover:text-indigo-400 transition duration-300">About</a>
+  <a href="#contact" class="block md:inline hover:text-indigo-400 transition duration-300">Contact</a>
+</nav>
   </div>
 </header>
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-6 bg-gradient-to-br from-indigo-900 via-purple-800 to-black">
     <div class="flex justify-center mb-8">
-      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-36 h-36 animate-bounce drop-shadow-xl" />
+      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-52 h-52 md:w-64 md:h-64 drop-shadow-2xl transition duration-300" />
     </div>
     <h1 class="text-5xl md:text-6xl font-orbitron font-bold text-indigo-100">SYNERGY SPHERES 3.0</h1>
     <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">Revolutionizing business operations through AI Agents, automation pipelines, smart contracts, and decentralized platforms.</p>
     <a href="#products" class="mt-8 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition transform hover:scale-105">🚀 Explore Solutions</a>
   </section>
 
-  <!-- About Section -->
+  <!-- Products Slider Section -->
+<section id="products" class="bg-gray-900 py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-orbitron font-bold text-indigo-300 mb-10">✨ Featured Products</h2>
+    <div class="overflow-hidden">
+      <div id="carousel" class="whitespace-nowrap flex space-x-6 px-2 pb-4 snap-x animate-scroll">
+        <a href="legalflow.html" class="snap-center inline-block bg-gray-800 rounded-xl p-6 min-w-[280px] hover:bg-indigo-600 transition transform hover:scale-105 text-left">
+          <img src="rcm-icon.svg" alt="LegalFlow Icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-2xl font-semibold text-white mb-2">LegalFlow Pro</h3>
+          <p class="text-gray-300">Generate, automate, and manage contracts with AI-driven templates and workflows.</p>
+        </a>
+        <a href="RCM%20Automation%20Suite.html" class="snap-center inline-block bg-gray-800 rounded-xl p-6 min-w-[280px] hover:bg-indigo-600 transition transform hover:scale-105 text-left">
+          <img src="rcm-icon.svg" alt="RCM Icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-2xl font-semibold text-white mb-2">RCM Automation Suite</h3>
+          <p class="text-gray-300">Streamline revenue cycle processes with our AI-powered automation toolkit.</p>
+        </a>
+        <a href="reading-speed.html" class="snap-center inline-block bg-gray-800 rounded-xl p-6 min-w-[280px] hover:bg-indigo-600 transition transform hover:scale-105 text-left">
+          <img src="logo-favicon.png" alt="Speed Icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Speed Reading Tool</h3>
+          <p class="text-gray-300">Measure and improve reading speed with interactive assessments.</p>
+        </a>
+        <a href="whitepaper.html" class="snap-center inline-block bg-gray-800 rounded-xl p-6 min-w-[280px] hover:bg-indigo-600 transition transform hover:scale-105 text-left">
+          <img src="logo-favicon.png" alt="Whitepaper Icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Whitepaper</h3>
+          <p class="text-gray-300">Explore our vision, strategy, and technical backbone in detail.</p>
+        </a>
+        <a href="order.html" class="snap-center inline-block bg-gray-800 rounded-xl p-6 min-w-[280px] hover:bg-indigo-600 transition transform hover:scale-105 text-left">
+          <img src="logo-favicon.png" alt="Order Icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Order Portal</h3>
+          <p class="text-gray-300">Purchase services, subscriptions, and full business automation bundles.</p>
+        </a>
+      </div>
+      <div class="mt-6">
+        <a href="products.html" class="inline-block mt-4 bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition transform hover:scale-105">🔎 View All Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+</style>
+
+<!-- About Section -->
 <section id="about" class="bg-gray-800 py-20 px-6">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-4xl font-orbitron font-bold mb-6 text-indigo-300">What is Synergyspheres?</h2>
@@ -127,27 +182,6 @@
     <p>© 2025 <span class="text-indigo-400 font-orbitron">Synergyspheres 3.0</span> | Built with 🔗 Web3, 🧠 AI, and 💼 Automation — Vision by <a href="https://twitter.com/basytism" class="text-indigo-300 hover:text-white" target="_blank">@basytism</a></p>
   </div>
 </footer>
-  <!-- Sitemap Links Section -->
-<section class="bg-gray-950 py-16 px-6">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-orbitron font-bold text-indigo-300 mb-6">🔗 Site Map</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-indigo-200 text-sm">
-      <a href="index.html" class="hover:text-white">🏠 Home</a>
-      <a href="upload.html" class="hover:text-white">📤 Upload Synergy Coin</a>
-      <a href="legalflow.html" class="hover:text-white">📄 LegalFlow Pro</a>
-      <a href="reading-speed.html" class="hover:text-white">📖 Reading Speed Tool</a>
-      <a href="RCM%20Automation%20Suite.html" class="hover:text-white">🤖 RCM Automation Suite</a>
-      <a href="order.html" class="hover:text-white">🛒 Order Portal</a>
-      <a href="whitepaper.html" class="hover:text-white">📃 Whitepaper</a>
-      <a href="README.md" class="hover:text-white">📘 README</a>
-      <a href="LICENSE" class="hover:text-white">⚖️ LICENSE</a>
-      <a href="server.js" class="hover:text-white">🧠 API Server</a>
-      <a href="logo-full.png" class="hover:text-white">🖼 Logo Full</a>
-      <a href="logo-favicon.png" class="hover:text-white">🔖 Favicon</a>
-      <a href="rcm-icon.svg" class="hover:text-white">📍 RCM Icon</a>
-      <a href=".github/" class="hover:text-white">🔧 .github Directory</a>
-    </div>
-  </div>
-</section>
+  
 </body>
 </html>
