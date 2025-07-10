@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <meta name="keywords" content="RCM, automation, n8n workflows, revenue cycle, Synergyspheres, healthcare tech">
+<head>
+  <meta name="keywords" content="RCM, automation, n8n workflows, revenue cycle, Synergyspheres, healthcare tech">
 <meta property="og:image" content="https://synergyspheres.github.io/assets/rcm-icon.svg">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Automate your entire healthcare revenue cycle with the RCM Workflow Automation Suite by Synergyspheres 3.0. Deploy plug-and-play workflows instantly." />
@@ -32,9 +32,12 @@
     .sticky-buy-btn:hover {
       background-color: #059669;
     }
+    .bg-synergy-dark { background-color: #0c1022; }
+    .bg-synergy-gradient { background-image: linear-gradient(to bottom right, #0c1022, #1a1f3d, #262f5f); }
+    .bg-synergy-footer { background-color: #05070f; }
   </style>
 </head>
-<body class="bg-gray-900 text-white leading-relaxed">
+<body class="bg-synergy-dark text-white leading-relaxed">
 
   <!-- Header -->
   <header class="bg-black py-4 px-6 flex items-center justify-between shadow-lg">
@@ -46,7 +49,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 px-6 bg-gradient-to-br from-blue-900 via-indigo-900 to-black">
+  <section class="text-center py-20 px-6 bg-synergy-gradient">
     <img src="https://synergyspheres.github.io/assets/rcm-icon.svg" alt="RCM Icon" class="mx-auto w-16 mb-4" />
     <h1 class="text-4xl md:text-5xl font-bold mb-4">RCM Workflow Automation Suite</h1>
     <p class="text-xl max-w-3xl mx-auto mb-6">Automate every stage of your revenue cycle with plug-and-play n8n workflows. Built for health providers, clinics, and RCM professionals.</p>
@@ -57,31 +60,33 @@
   <a href="https://synergyspheres.gumroad.com/l/RCM_automation_pack" target="_blank" class="sticky-buy-btn">Buy Now →</a>
 
   <!-- Embed YouTube Walkthrough -->
-  <section class="bg-gray-900 py-16 px-6 max-w-4xl mx-auto text-center">
+  <section class="bg-synergy-dark py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-semibold mb-6">📽️ Walkthrough Demo</h2>
     <p class="text-lg mb-6">Watch how the automation suite works in a real n8n environment.</p>
+    <!-- Markdown Embed for YouTube Walkthrough -->
+    <!-- [📽️ Watch RCM Workflow Automation Demo](https://www.youtube.com/watch?v=dM9cOQzZJjM) -->
     <div class="aspect-w-16 aspect-h-9">
       <iframe class="w-full h-96 rounded-xl shadow-lg" src="https://www.youtube.com/embed/dM9cOQzZJjM" title="RCM Workflow Demo" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="bg-gray-800 py-20 px-6">
+  <section class="bg-synergy-gradient py-20 px-6">
     <h2 class="text-3xl font-semibold text-center mb-12">💬 What Users Say</h2>
     <div class="splide" id="testimonial-slider">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+          <li class="splide__slide p-6 bg-gray-800 rounded-xl shadow-md flex flex-col items-center text-center">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-14 h-14 rounded-full mb-4" alt="Zain"/>
             <p class="mb-4">“Absolutely streamlined our billing cycle. What used to take hours now runs automatically thanks to these workflows.”</p>
             <p class="font-semibold text-green-400">— Zain R., Healthcare Admin</p>
           </li>
-          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+          <li class="splide__slide p-6 bg-gray-800 rounded-xl shadow-md flex flex-col items-center text-center">
             <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-14 h-14 rounded-full mb-4" alt="Sarah"/>
             <p class="mb-4">“I deployed it with n8n in 15 minutes. Everything’s modular, clean, and production-ready.”</p>
             <p class="font-semibold text-green-400">— Sarah K., Automation Specialist</p>
           </li>
-          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+          <li class="splide__slide p-6 bg-gray-800 rounded-xl shadow-md flex flex-col items-center text-center">
             <img src="https://randomuser.me/api/portraits/men/65.jpg" class="w-14 h-14 rounded-full mb-4" alt="Jamal"/>
             <p class="mb-4">“For the price, this pack is a steal. We’ve already saved on development costs in the first week.”</p>
             <p class="font-semibold text-green-400">— Jamal A., RCM Consultant</p>
@@ -102,7 +107,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black py-10 px-6 text-center">
+  <footer class="bg-synergy-footer py-10 px-6 text-center">
     <p class="text-sm text-gray-500 mb-2">Built with ⚙️ by <a href="https://github.com/basytism" class="text-blue-400 hover:underline">@Basytism</a> for Synergyspheres 3.0</p>
     <a href="https://synergyspheres.github.io" class="text-green-400 hover:underline text-sm">Visit Synergyspheres Home</a>
   </footer>
