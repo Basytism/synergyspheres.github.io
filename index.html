@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SYNERGY SPHERES 3.0</title>
-  <meta name="description" content="Synergyspheres: Bridging businesses from GMB to DAO with AI agents, automation, and Web3.0 technology." />
+  <meta name="description" content="Synergyspheres: Automating workflows, contracts, and operations through AI agents, automation systems, and Web3 infrastructure." />
 
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
@@ -15,7 +15,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo-favicon.png" />
 
-  <!-- Custom Font Classes & Animations -->
   <style>
     .font-orbitron {
       font-family: 'Orbitron', sans-serif;
@@ -23,111 +22,123 @@
     .font-space {
       font-family: 'Space Grotesk', sans-serif;
     }
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes spin-3d {
+      0% { transform: rotateY(0deg) rotateX(0deg); }
+      50% { transform: rotateY(180deg) rotateX(10deg); }
+      100% { transform: rotateY(360deg) rotateX(0deg); }
     }
-    .animate-spin-slow {
-      animation: spin-slow 8s linear infinite;
+    .animate-3d-rotate {
+      animation: spin-3d 10s linear infinite;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #7f5af0;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+    .floating-btn:hover {
+      transform: scale(1.05);
+      background-color: #6246ea;
     }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white font-space">
 
+  <!-- Floating Buy Button -->
+  <a href="https://gumroad.com/synergyspheres" class="floating-btn">🛒 Buy Now</a>
+
   <!-- Header Navigation -->
-  <header class="bg-gradient-to-r from-purple-900 to-blue-900 shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="flex items-center space-x-3">
-        <img src="logo-full.png" alt="Synergyspheres Logo" class="w-10 h-10 animate-spin-slow"/>
-        <span class="text-xl font-bold text-white uppercase tracking-wider font-orbitron">SYNERGY SPHERES</span>
-      </div>
-      <nav class="space-x-6 text-white font-medium">
-        <a href="#services" class="hover:text-indigo-300">Services</a>
-        <a href="#blogs" class="hover:text-indigo-300">Blogs</a>
-        <a href="#contact" class="hover:text-indigo-300">Contact</a>
-        <a href="reading-speed.html" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full font-semibold transition transform hover:scale-105">📖 Speed Test Tool</a>
-      </nav>
+  <header class="bg-black bg-opacity-90 border-b border-indigo-500 shadow-2xl backdrop-blur-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-5">
+    <div class="flex items-center space-x-4">
+      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-16 h-16 animate-3d-rotate drop-shadow-2xl" />
+      <span class="text-3xl md:text-4xl font-bold text-indigo-400 uppercase tracking-wide font-orbitron">Synergyspheres 3.0</span>
     </div>
-  </header>
+    <nav class="space-x-4 mt-4 md:mt-0 text-sm md:text-base font-medium text-gray-200">
+      <a href="#about" class="hover:text-indigo-400 transition duration-300">About</a>
+      <a href="#products" class="hover:text-indigo-400 transition duration-300">Products</a>
+      <a href="#features" class="hover:text-indigo-400 transition duration-300">Features</a>
+      <a href="#testimonials" class="hover:text-indigo-400 transition duration-300">Testimonials</a>
+      <a href="#blog" class="hover:text-indigo-400 transition duration-300">Blog</a>
+      <a href="#contact" class="hover:text-indigo-400 transition duration-300">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-br from-blue-800 to-purple-900">
-    <div class="flex justify-center mb-6">
-      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-28 h-28 animate-bounce" />
+  <section class="text-center py-24 px-6 bg-gradient-to-br from-indigo-900 via-purple-800 to-black">
+    <div class="flex justify-center mb-8">
+      <img src="logo-full.png" alt="Synergyspheres Logo" class="w-36 h-36 animate-bounce drop-shadow-xl" />
     </div>
-    <h1 class="text-5xl font-orbitron font-bold">SYNERGY SPHERES 3.0</h1>
-    <p class="mt-4 text-lg">From Google My Business to DAO – Empowering Businesses with Web3</p>
-    <a href="#services" class="mt-6 inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-medium transition transform hover:scale-105">Explore Services</a>
+    <h1 class="text-5xl md:text-6xl font-orbitron font-bold text-indigo-100">SYNERGY SPHERES 3.0</h1>
+    <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">Revolutionizing business operations through AI Agents, automation pipelines, smart contracts, and decentralized platforms.</p>
+    <a href="#products" class="mt-8 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition transform hover:scale-105">🚀 Explore Solutions</a>
   </section>
 
   <!-- About Section -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold font-orbitron mb-6">What is Synergyspheres?</h2>
-    <p class="text-lg leading-relaxed text-gray-300">
-      Synergyspheres is a Web3-native digital transformation hub helping local and global businesses evolve from traditional structures like Google My Business into decentralized autonomous organizations (DAOs). We blend AI agents, automation pipelines, SEO strategies, and blockchain tooling for measurable growth and freedom.
+<section id="about" class="bg-gray-800 py-20 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-orbitron font-bold mb-6 text-indigo-300">What is Synergyspheres?</h2>
+    <p class="text-lg text-gray-300 leading-relaxed">
+      Synergyspheres 3.0 empowers businesses to thrive in the AI and Web3 era through contract automation tools, AI agent workflows, and decentralized business infrastructure.
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Services Section -->
-  <section id="services" class="bg-gray-800 py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center font-orbitron mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Google My Business to DAO</h3>
-          <p class="text-gray-400">We help businesses evolve from centralized directories into decentralized, tokenized communities.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">AI Agents & Automation</h3>
-          <p class="text-gray-400">Deploy GPT-powered agents and workflows to automate customer support, SEO tasks, and lead generation.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">Web3 Consultancy</h3>
-          <p class="text-gray-400">Smart contract advisory, DAO governance setup, and secure onboarding to blockchain platforms.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-2 font-orbitron">GMB + Local SEO Boost</h3>
-          <p class="text-gray-400">Tailored SEO strategies to dominate Google Maps, local directories, and hyper-local searches.</p>
-        </div>
-      </div>
+<!-- Footer Section -->
+<footer class="bg-black text-gray-400 text-sm py-10 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="font-orbitron font-semibold text-indigo-400 text-lg mb-3">SYNERGYSHPERES 3.0</h3>
+      <p class="text-sm">Redefining operations through smart automation, legal innovation, and decentralized growth strategies.</p>
     </div>
-  </section>
-
-  <!-- Upload Redirect Section -->
-  <section id="upload" class="bg-gray-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold font-orbitron text-white mb-6">🎥 Upload & Claim Synergy Coins</h2>
-      <p class="text-gray-400 mb-8">
-        Submit a short video or image review of your experience or project. You'll be redirected to a dedicated page to upload and claim Synergy Coins.
-      </p>
-      <a href="upload.html" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold transition">
-        🚀 Go to Upload Interface
-      </a>
+    <div>
+      <h4 class="font-semibold text-indigo-300 mb-2">Quick Links</h4>
+      <ul class="space-y-1">
+        <li><a href="#about" class="hover:text-white">About</a></li>
+        <li><a href="#products" class="hover:text-white">Products</a></li>
+        <li><a href="#features" class="hover:text-white">Features</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Blog Placeholder -->
-  <section id="blogs" class="py-16 bg-gray-900">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Latest Blogs</h2>
-      <p class="text-gray-400">Coming soon: Web3 insights, business automation guides, and decentralization case studies.</p>
+    <div>
+      <h4 class="font-semibold text-indigo-300 mb-2">Products</h4>
+      <ul class="space-y-1">
+        <li><a href="products.html#legalflow" class="hover:text-white">LegalFlow Pro</a></li>
+        <li><a href="products.html#rcm" class="hover:text-white">RCM AI</a></li>
+        <li><a href="products.html#bundle" class="hover:text-white">Business AI Pack</a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold font-orbitron mb-6">Get in Touch</h2>
-      <p class="text-gray-400 mb-4">📩 abdulbasitnoor23@gmail.com</p>
-      <p class="text-gray-400 mb-4">🌐 LinkedIn: www.linkedin.com/abdulbasitnoor</p>
+    <div>
+      <h4 class="font-semibold text-indigo-300 mb-2">Connect</h4>
+      <p>Email: <a href="mailto:abdulbasitnoor23@gmail.com" class="hover:text-white">abdulbasitnoor23@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/abdulbasitnoor" class="hover:text-white" target="_blank">@abdulbasitnoor</a></p>
     </div>
-  </section>
-
-  <!-- Footer with Branding -->
-  <footer class="text-center py-6 bg-black text-gray-500 text-sm">
-    <p>Powered by <strong class="text-indigo-400 font-orbitron">SYNERGY SPHERES 3.0</strong> | © 2025 @Basytism</p>
-    <p>Bridging Businesses to Web3 – AI, DAO, and Digital Innovation 🌐</p>
-  </footer>
-
+  </div>
+  <div class="mt-10 text-center border-t border-gray-700 pt-6">
+    <p>© 2025 <span class="text-indigo-400 font-orbitron">Synergyspheres 3.0</span> | Built with 🔗 Web3, 🧠 AI, and 💼 Automation — Vision by <a href="https://twitter.com/basytism" class="text-indigo-300 hover:text-white" target="_blank">@basytism</a></p>
+  </div>
+</footer>
+  <!-- Sitemap Suggestion (for full structure):
+    - Home (/index.html)
+    - About (/about.html)
+    - Products (/products.html)
+      - LegalFlow Pro
+      - RCM AI
+      - Business AI Pack
+    - Features (/features.html)
+    - Blog (/blog.html)
+    - Testimonials (#testimonials)
+    - Contact (/contact.html)
+    - Upload Interface (/upload.html)
+  -->
 </body>
 </html>
