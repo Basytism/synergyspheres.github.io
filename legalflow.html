@@ -1,81 +1,124 @@
-import re
-import spacy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Drafting Generator | Synergyspheres</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-indigo-800 text-white p-4 text-center font-bold text-xl shadow">Legal Drafting Generator – 🇵🇰 Pakistan Format</header>
 
-# Load English NLP model
-nlp = spacy.load("en_core_web_sm")
+  <main class="max-w-6xl mx-auto p-6">
+    <div class="grid md:grid-cols-2 gap-6">
 
-# Sample legal draft input (replace with form data input)
-plaint_text = """
-IN THE COURT OF SENIOR CIVIL JUDGE, MULTAN
+      <!-- Form Section -->
+      <div class="bg-white rounded shadow p-4">
+        <h2 class="text-lg font-semibold mb-4">📝 Enter Suit Details</h2>
 
-CASE NO: 2025-CIV-001
+        <label class="block mb-2 font-medium">Court Name</label>
+        <input id="court" class="w-full p-2 border rounded" placeholder="In the Court of Senior Civil Judge, Multan">
+
+        <label class="block mt-4 mb-2 font-medium">Case No</label>
+        <input id="caseNo" class="w-full p-2 border rounded" placeholder="2025-CIV-001">
+
+        <label class="block mt-4 mb-2 font-medium">Plaintiff Name</label>
+        <input id="plaintiff" class="w-full p-2 border rounded" placeholder="Ahmed Khan">
+
+        <label class="block mt-4 mb-2 font-medium">Defendant Name</label>
+        <input id="defendant" class="w-full p-2 border rounded" placeholder="Zeeshan Malik">
+
+        <label class="block mt-4 mb-2 font-medium">Cause of Action</label>
+        <textarea id="cause" class="w-full p-2 border rounded" placeholder="On 12 June, Defendant failed to pay..." rows="3"></textarea>
+
+        <label class="block mt-4 mb-2 font-medium">Relief Sought</label>
+        <textarea id="relief" class="w-full p-2 border rounded" placeholder="Decree of Rs. 50,000 + costs..." rows="2"></textarea>
+
+        <label class="block mt-4 mb-2 font-medium">Valuation & Court Fee</label>
+        <input id="valuation" class="w-full p-2 border rounded" placeholder="Rs. 50,000">
+
+        <label class="block mt-4 mb-2 font-medium">Lawyer Details</label>
+        <input id="lawyer" class="w-full p-2 border rounded" placeholder="Advocate Asif Raza, License No. PK-1572">
+
+        <label class="block mt-4 mb-2 font-medium">Date</label>
+        <input type="date" id="date" class="w-full p-2 border rounded">
+
+        <button onclick="generatePreview()" class="mt-6 w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-700">🔍 Preview</button>
+        <button onclick="downloadPDF()" class="mt-2 w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">📄 Export PDF</button>
+      </div>
+
+      <!-- Preview Section -->
+      <div id="preview" class="bg-white p-6 rounded shadow overflow-auto whitespace-pre-wrap text-gray-900 text-sm">
+        <em>Preview will appear here...</em>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-gray-500 py-4 mt-8 border-t">Built with vision by @basytism • Synergyspheres 3.0</footer>
+
+  <script>
+    function generatePreview() {
+      const court = document.getElementById('court').value;
+      const caseNo = document.getElementById('caseNo').value;
+      const plaintiff = document.getElementById('plaintiff').value;
+      const defendant = document.getElementById('defendant').value;
+      const cause = document.getElementById('cause').value;
+      const relief = document.getElementById('relief').value;
+      const valuation = document.getElementById('valuation').value;
+      const lawyer = document.getElementById('lawyer').value;
+      const date = document.getElementById('date').value;
+
+      const plaintText = `
+${court.toUpperCase()}
+
+CASE NO: ${caseNo}
 
 Between:
-
-[PLAINTIFF NAME], S/o [Father's Name], R/o [Address],
-                   ............Plaintiff
+${plaintiff}, ...........Plaintiff
 
 And
+${defendant}, ...........Defendant
 
-[DEFENDANT NAME], S/o [Father's Name], R/o [Address],
-                   ............Defendant
-
-SUIT FOR [Type of Relief – e.g., RECOVERY OF MONEY]
+SUIT FOR RECOVERY / RELIEF
 
 RESPECTED SIR,
 
 1. That the plaintiff is a citizen of Pakistan and a law-abiding individual.
-2. That the cause of action arose on [Date] when the defendant [Action – e.g., failed to repay loan].
+2. That the cause of action arose on ${date} when the defendant ${cause}.
 3. That this Honorable Court has jurisdiction to entertain the present suit.
-4. That the value of the suit for the purpose of court fee and jurisdiction is Rs. [Amount] and requisite court fee has been affixed.
-5. That the plaintiff respectfully prays for the following relief:
+4. That the value of the suit is ${valuation} and requisite court fee has been affixed.
+5. That the plaintiff respectfully prays for:
+   i. ${relief}
+   ii. Cost of the suit
+   iii. Any other relief deemed fit
 
-   i.   A decree for Rs. [Amount] against the defendant.
-   ii.  Cost of the suit.
-   iii. Any other relief deemed just and proper.
-
-6. That the contents of the plaint are true and correct to the best of my knowledge and belief.
+6. That the contents of this plaint are true and correct.
 
 Filed by:
-[PLAINTIFF NAME]
-Through Counsel
-[Lawyer's Name & License No]
+${plaintiff}
+Through Counsel: ${lawyer}
 
 VERIFICATION:
-Verified on oath at Multan this [Date] that the contents of this plaint are true and correct.
-
+Verified at Multan this ${date}.
 
 AFFIDAVIT:
-I, [Plaintiff Name], do hereby state on solemn affirmation that the contents of the accompanying plaint are true and correct.
+I, ${plaintiff}, state on oath that contents are true and correct.`;
 
-"""
+      document.getElementById('preview').textContent = plaintText;
+    }
 
-# Clause patterns for automatic tagging (optional)
-clause_keywords = {
-    "Cause of Action": r"(?i)cause of action.*",
-    "Jurisdiction": r"(?i)jurisdiction.*",
-    "Valuation": r"(?i)value of the suit.*",
-    "Relief Sought": r"(?i)relief.*",
-    "Verification": r"(?i)verification.*",
-    "Affidavit": r"(?i)affidavit.*"
-}
-
-# Extract sentences
-doc = nlp(plaint_text)
-sentences = [sent.text.strip() for sent in doc.sents]
-
-# Match clauses
-tagged_sections = {}
-for clause_type, pattern in clause_keywords.items():
-    for sentence in sentences:
-        if re.search(pattern, sentence, re.IGNORECASE):
-            tagged_sections.setdefault(clause_type, []).append(sentence)
-
-# Display structured document
-print("\n" + "="*80)
-print("\t\tPLAINT STRUCTURE (Auto-Tagged Sections)")
-print("="*80)
-for key, values in tagged_sections.items():
-    print(f"\n🔷 {key}:")
-    for val in values:
-        print(f"   - {val}")
+    function downloadPDF() {
+      const element = document.getElementById('preview');
+      const opt = {
+        margin: 0.5,
+        filename: 'LegalDraft_Pakistan.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().from(element).set(opt).save();
+    }
+  </script>
+</body>
+</html>
