@@ -114,6 +114,26 @@
       document.getElementById('preview').textContent = 'Preview will appear here...';
       syncFirebase('');
     }
+<script>
+function downloadPDF() {
+  const preview = document.getElementById('preview');
+  if (!preview || preview.innerHTML.trim() === '' || preview.innerHTML.includes('Preview will appear')) {
+    alert('Please generate a preview first.');
+    return;
+  }
+  html2pdf()
+    .set({
+      margin: 1,
+      filename: 'LegalDraft_Pakistan.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    })
+    .from(preview)
+    .save();
+}
+</script>
+</html>
 
     function downloadDOCX() {
       const doc = new window.docx.Document({
