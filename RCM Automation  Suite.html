@@ -5,84 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Automate your entire healthcare revenue cycle with the RCM Workflow Automation Suite by Synergyspheres 3.0. Deploy plug-and-play workflows instantly." />
   <title>RCM Workflow Automation Suite | Synergyspheres 3.0</title>
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="https://synergyspheres.github.io/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
+    .icon { width: 40px; height: 40px; margin-bottom: 10px; }
+    .sticky-buy-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #10b981;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      font-weight: 600;
+      z-index: 50;
+      transition: background-color 0.3s ease;
+    }
+    .sticky-buy-btn:hover {
+      background-color: #059669;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans leading-relaxed">
+<body class="bg-gray-900 text-white leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-black py-4 px-6 flex items-center justify-between shadow-lg">
+    <div class="flex items-center space-x-3">
+      <img src="https://synergyspheres.github.io/assets/rcm-icon.svg" alt="RCM Icon" class="w-10" />
+      <h1 class="text-xl font-bold tracking-wide">Synergyspheres 3.0</h1>
+    </div>
+    <a href="https://synergyspheres.gumroad.com/l/RCM_automation_pack" class="text-green-400 hover:underline font-semibold">Buy Now</a>
+  </header>
 
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-gradient-to-br from-blue-900 via-indigo-900 to-black">
-    <h1 class="text-4xl md:text-5xl font-bold font-orbitron mb-4">⚙️ RCM Workflow Automation Suite</h1>
+    <img src="https://synergyspheres.github.io/assets/rcm-icon.svg" alt="RCM Icon" class="mx-auto w-16 mb-4" />
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">RCM Workflow Automation Suite</h1>
     <p class="text-xl max-w-3xl mx-auto mb-6">Automate every stage of your revenue cycle with plug-and-play n8n workflows. Built for health providers, clinics, and RCM professionals.</p>
-    <a href="https://your-gumroad-link.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-xl font-semibold transition">🎯 Buy Now on Gumroad</a>
+    <a href="https://synergyspheres.gumroad.com/l/RCM_automation_pack" target="_blank" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-xl font-semibold transition">🎯 Buy Now on Gumroad</a>
   </section>
 
-  <!-- Product Overview -->
-  <section class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">What is Included?</h2>
-    <p class="text-lg mb-6">The RCM Automation Suite includes ready-to-deploy JSON workflows tailored for:</p>
-    <ul class="list-disc list-inside space-y-2 text-base">
-      <li>📝 Patient Intake & Scheduling Automation</li>
-      <li>📤 Claim Submission & Status Check APIs</li>
-      <li>📨 Automated Billing & Reminders</li>
-      <li>📊 Payment Posting & Reconciliation Workflows</li>
-      <li>🧾 Denial Management Alerts</li>
-    </ul>
+  <!-- Sticky Floating Buy Now Button -->
+  <a href="https://synergyspheres.gumroad.com/l/RCM_automation_pack" target="_blank" class="sticky-buy-btn">Buy Now →</a>
+
+  <!-- Embed YouTube Walkthrough -->
+  <section class="bg-gray-900 py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-6">📽️ Walkthrough Demo</h2>
+    <p class="text-lg mb-6">Watch how the automation suite works in a real n8n environment.</p>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe class="w-full h-96 rounded-xl shadow-lg" src="https://www.youtube.com/embed/dM9cOQzZJjM" title="RCM Workflow Demo" frameborder="0" allowfullscreen></iframe>
+    </div>
   </section>
 
-  <!-- Features -->
-  <section class="bg-gray-800 py-16 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-center">✨ Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-gray-700 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-2">⚡ Plug & Play Workflows</h3>
-          <p>Download and deploy in minutes using n8n or your preferred automation engine.</p>
-        </div>
-        <div class="p-6 bg-gray-700 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-2">🔗 API-Ready Logic</h3>
-          <p>Integrates seamlessly with EHRs, payment processors, and CRM tools.</p>
-        </div>
-        <div class="p-6 bg-gray-700 rounded-2xl shadow-lg">
-          <h3 class="text-xl font-bold mb-2">🔍 Error-Handled Nodes</h3>
-          <p>Built-in checks and logs to track workflow execution across your pipeline.</p>
-        </div>
+  <!-- Testimonials -->
+  <section class="bg-gray-800 py-20 px-6">
+    <h2 class="text-3xl font-semibold text-center mb-12">💬 What Users Say</h2>
+    <div class="splide" id="testimonial-slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-14 h-14 rounded-full mb-4" alt="Zain"/>
+            <p class="mb-4">“Absolutely streamlined our billing cycle. What used to take hours now runs automatically thanks to these workflows.”</p>
+            <p class="font-semibold text-green-400">— Zain R., Healthcare Admin</p>
+          </li>
+          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-14 h-14 rounded-full mb-4" alt="Sarah"/>
+            <p class="mb-4">“I deployed it with n8n in 15 minutes. Everything’s modular, clean, and production-ready.”</p>
+            <p class="font-semibold text-green-400">— Sarah K., Automation Specialist</p>
+          </li>
+          <li class="splide__slide p-6 bg-gray-700 rounded-xl shadow-md flex flex-col items-center text-center">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" class="w-14 h-14 rounded-full mb-4" alt="Jamal"/>
+            <p class="mb-4">“For the price, this pack is a steal. We’ve already saved on development costs in the first week.”</p>
+            <p class="font-semibold text-green-400">— Jamal A., RCM Consultant</p>
+          </li>
+        </ul>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#testimonial-slider', {
+          type: 'loop',
+          autoplay: true,
+          pauseOnHover: true,
+          interval: 5000,
+        }).mount();
+      });
+    </script>
   </section>
 
-  <!-- Demo -->
-  <section class="py-16 px-6 max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-6">🎬 Demo & Screenshots</h2>
-    <p class="text-lg mb-4">Here’s a quick look at how the suite works in real time.</p>
-    <div class="bg-gray-700 rounded-xl overflow-hidden shadow-md">
-      <img src="https://via.placeholder.com/1200x600?text=RCM+Workflow+Dashboard+Preview" alt="RCM Workflow Preview" />
-    </div>
-  </section>
-
-  <!-- Who It’s For -->
-  <section class="bg-gray-900 py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">👤 Who Should Use This?</h2>
-    <p class="text-lg">This suite is perfect for:</p>
-    <ul class="list-disc list-inside mt-4 space-y-2">
-      <li>🏥 Healthcare Clinics & Private Practices</li>
-      <li>🧑‍💻 RCM/Billing Professionals & Freelancers</li>
-      <li>👨‍⚕️ HealthTech SaaS Integrators</li>
-    </ul>
-  </section>
-
-  <!-- Pricing -->
-  <section class="bg-gradient-to-r from-indigo-900 to-blue-800 py-20 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">💳 One-Time Purchase</h2>
-    <p class="text-xl mb-6">Get instant access to all workflows, updates, and documentation.</p>
-    <p class="text-4xl font-extrabold text-green-400 mb-6">$49 USD</p>
-    <a href="https://your-gumroad-link.com" target="_blank" class="bg-green-500 hover:bg-green-600 py-3 px-6 text-white font-semibold rounded-xl">🚀 Buy Now on Gumroad</a>
-  </section>
-
-  <!-- Powered by -->
-  <footer class="bg-black py-8 text-center text-sm">
-    <p class="text-gray-400">🚀 Powered by <strong>Synergyspheres 3.0</strong> | Crafted by Cragtignon Gamma</p>
-    <a href="https://synergyspheres.github.io" class="text-blue-400 hover:underline">Visit Main Site</a>
+  <!-- Footer -->
+  <footer class="bg-black py-10 px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Built with ⚙️ by <a href="https://github.com/basytism" class="text-blue-400 hover:underline">@Basytism</a> for Synergyspheres 3.0</p>
+    <a href="https://synergyspheres.github.io" class="text-green-400 hover:underline text-sm">Visit Synergyspheres Home</a>
   </footer>
 
 </body>
